@@ -2,10 +2,15 @@ import pandas as pd
 import os
 
 def load_data(folder_path):
-    ranks_avg = pd.read_csv(os.path.join(folder_path,"WCA_export_RanksAverage.tsv"), sep="\t")
-    ranks_single = pd.read_csv(os.path.join(folder_path,"WCA_export_RanksAverage.tsv"), sep="\t")
+    ranks_avg = pd.read_csv(os.path.join(folder_path,"WCA_export_RanksAverage.tsv"), sep="\t", dtype={'eventId': 'str'})
+    ranks_single = pd.read_csv(os.path.join(folder_path,"WCA_export_RanksAverage.tsv"), sep="\t", dtype={'eventId': 'str'})
     persons = pd.read_csv(os.path.join(folder_path,"WCA_export_Persons.tsv"), sep="\t")
     return ranks_avg, ranks_single, persons
+
+def create_record_table(ranks_table, persons):
+    ranks_table = ranks_table[ranks_table["countryRank"]==1]
+    records_table = persons.merge(ranks_table, left_on="id", right_on="personId")
+    return records_table
 
 def decode_mbd_time(input_time):
     str_input = str(input_time)
