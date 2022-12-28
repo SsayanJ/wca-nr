@@ -59,7 +59,7 @@ dict: {"database_date": str, "result": List[Dict()] }
 The front end can be found here: https://wca-nr-front-jhaooholda-ue.a.run.app/  
 It features 2 pages, one for each way of calling the API.
 
-# Potential new features
+# Potential new features and improvements
 - [ ] The same features but for Continental Records
 - [ ] Document and refactor the code
 - [ ] Replace the DB currently stored as CSV file by an actual DB (hosted on Google Cloud) based on the amount of data it should not have a visible impact on performance though
