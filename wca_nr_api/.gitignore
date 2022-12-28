@@ -130,5 +130,3 @@ dmypy.json
 
 # Project specific
 WCA_export/
-WCA_db
-sandbox_WCA_NR.ipynb

@@ -1,0 +1,7 @@
+uvicorn
+fastapi
+pandas
+pydantic
+gcsfs
+fsspec
+google-cloud-storage
